@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <!-- скрипт для темы -->
+  <script src="color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.122.0">
+  <title>Blog Template · Bootstrap v5.3</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="blog.css" rel="stylesheet">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+
+  <!-- Тема -->
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          aria-pressed="true">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+      stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+    </symbol>
+    <symbol id="cart" viewBox="0 0 16 16">
+      <path
+        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+    </symbol>
+    <symbol id="chevron-right" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+    </symbol>
+  </svg>
+
+  <!-- Навбар -->
+  <div class="container">
+    <header class="border-bottom lh-1 py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <a class="link-secondary" href="#">Подписка</a>
+        </div>
+        <div class="col-4 text-center">
+          <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Блог</a>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <a class="link-secondary" href="#" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
+              viewBox="0 0 24 24">
+              <title>Search</title>
+              <circle cx="10.5" cy="10.5" r="7.5" />
+              <path d="M21 21l-5.2-5.2" />
+            </svg>
+          </a>
+          <a class="btn btn-sm btn-outline-secondary" href="#">Тыкни</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Навбар  -->
+    <div class="nav-scroller py-1 mb-3 border-bottom">
+      <nav class="nav nav-underline justify-content-between">
+        <a class="nav-item nav-link link-body-emphasis active" href="index.html">Главная</a>
+        <a class="nav-item nav-link link-body-emphasis" href="#">Общее</a>
+        <a class="nav-item nav-link link-body-emphasis" href="Python.html">Python</a>
+        <a class="nav-item nav-link link-body-emphasis" href="#">SQL</a>
+        <a class="nav-item nav-link link-body-emphasis" href="Go.html">GO</a>
+        <a class="nav-item nav-link link-body-emphasis" href="Git G.H. and Tetminal.html">Git (G.H. and T.)</a>
+        <!-- <a class="nav-item nav-link link-body-emphasis" href="#">Politics</a>
+        <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
+        <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
+        <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
+        <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
+        <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a> -->
+      </nav>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+      <div class="col-lg-6 px-0">
+        <h1 class="display-4 fst-italic">Go</h1>
+        <p class="lead my-3">Краткий (ооочень) конспект.</p>
+        <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Перейти к быстрым ссылкам</a></p>
+      </div>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-8">
+        <h3 class="pb-4 mb-4 fst-italic border-bottom">
+          Вперед
+        </h3>
+
+
+        <article class="blog-post">
+          <h2 class="display-5 link-body-emphasis mb-1" id="Terminal">Базовая часть</h2>
+          <p class="blog-post-meta">Апрель 13, 2024 от <a href="https://vk.com/osnovvvva">Илья</a></p>
+
+          <p>Go, также известный как Golang, — это язык программирования с открытым исходным кодом. </p>
+          <hr>
+          <p>Представленный публике в 2009 году, Go был разработан для упрощения задач программирования и повышения
+            эффективности. Он родился из потребности в языке, который был бы прост для понимания, эффективен для
+            выполнения и прежде всего способен справиться с масштабами, в которых работает Google. Его отличают
+            простота, эффективность, многопоточное программирование, кроссплатформенность и высокая скорость компиляции
+          </p>
+          <figure class="figure">
+            <img src="images/go.png" class="figure-img img-fluid rounded" alt="..." style="width: 400px;">
+            <figcaption class="figure-caption">This is terminal</figcaption>
+          </figure>
+
+          <h3 id="Def">Функции</h3>
+          <p>Функция объявляется следующим образом:</p>
+          <div class="alert alert-dark" role="alert">
+            <code>func</code> имя_функции <code>(список_параметров) (типы_возвращаемых_значений)</code> { <br>
+            &emsp;выполняемые_операторы <br>
+            }
+          </div>
+          <p><b> При вызове функции передается копия значения переменной.</b></p>
+          <p>Функции могут возвращать результат. Для этого нужно после списка параметров функции указать тип
+            возвращаемого результата. А в теле функции использовать оператор return, после которого указывается
+            возвращаемое значение:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>package main 
+import "fmt"
+                                           
+func main() {
+    var a = add(4, 5)  <span class="text-secondary"> // 9</span>
+    var b = add(20, 6)  <span class="text-secondary">// 26</span>
+    fmt.Println(a)
+    fmt.Println(b)
+}
+ 
+<span class="text-danger">func add(x, y int) int {</span>
+    return x + y
+}          
+          </pre></code>
+          <p>
+            <b>Функции с переменным числом аргументов</b> могут быть вызваны с любым количество аргументов. Пример такой
+            функции - это fmt.Println.
+          </p>
+          <p><i>Если у вас есть несколько аргументов в срезе, вы можете применить его к функции с переменным числом
+              аргументов таким образом func(slice...).</i>
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>package main
+
+import "fmt"
+
+<span class="text-danger">func sum(nums ...int)</span> {
+    fmt.Print(nums, " ")
+    total := 0
+    for _, num := range nums {
+        total += num
+    }
+    fmt.Println(total)
+}
+
+func main() {
+
+    sum(1, 2)
+    sum(1, 2, 3)
+
+    nums := []int{1, 2, 3, 4}
+    <span class="text-danger">sum(nums...)</span>
+}
+          </pre></code>
+          <div class="alert alert-dark" role="alert">
+            <span class="text-secondary">
+              [1 2] 3 <br>
+              [1 2 3] 6 <br>
+              [1 2 3 4] 10 <br>
+            </span>
+          </div>
+
+          <h3 id="Mas">Массивы и срезы</h3>
+          <p>Массив — это последовательность элементов одного типа фиксированной длины. Объявление массива
+            осуществляется следующим образом:
+          </p>
+          <div class="alert alert-dark" role="alert">
+            <code>var a [3]int </code> <br>
+            fmt.Println(a)<span class="text-secondary"> // [0 0 0] </span>
+            </span>
+          </div>
+          <p>
+            <i>(массивы разной длины относятся к разным типам независимо от того, что хранят значения одного типа)</i>
+          </p>
+          <p>Одновременно с объявлением массива мы можем задать значения его элементов (инициализировать его):</p>
+          <div class="alert alert-dark" role="alert">
+            var a [3]int = [3]int{1, 2, 3} <br>
+            b := [3]int{1, 2, 3} <br>
+            c := [...]int{1, 2, 3} <span class="text-secondary">// вместо явного указания длины массива мы можем указать
+              символ многоточия (...) в квадратных скобках, тогда длина массива будет определена Go в зависимости от
+              количества указанных при инициализации значений.</span><br>
+            d := [3]int{1: 12} <br>
+            <br>
+            fmt.Println(a)<span class="text-secondary"> // [1 2 3] </span> <br>
+            fmt.Println(b)<span class="text-secondary"> // [1 2 3] </span> <br>
+            fmt.Println(c)<span class="text-secondary"> // [1 2 3] </span> <br>
+            fmt.Println(d)<span class="text-secondary"> // [0 12 0]
+          </div>
+          <p>Для обращения к элементам массива применяются индексы - номера элементов.</p>
+
+
+          <h4 id="Slice">Срезы (слайсы, slices)</h4>
+          <p>Срез — это последовательность элементов одного типа переменной длины.</p>
+          <p>Массивы и срезы тесно связаны. Срез — это структура данных, которая предоставляет доступ к
+            подпоследовательности элементов базового массива.
+          <p> <b> Длину массива изменять нельзя, а вот новые элементы в срез
+              добавлять можно, так что в некоторых языках срезами называются динамические массивы.</b>
+          </p>
+          </p>
+          <p>создание среза:</p>
+          <div class="alert alert-dark" role="alert">
+            var a []int <br>
+            var b []int = []int{1, 2, 3} <br>
+            c := []int{1, 2, 3} <br>
+            d := []int{1: 12} <br>
+            <br>
+            fmt.Println(a)<span class="text-secondary"> // []</span> <br>
+            fmt.Println(b)<span class="text-secondary">// [1 2 3]</span> <br>
+            fmt.Println(c)<span class="text-secondary">// [1 2 3]</span> <br>
+            fmt.Println(d)<span class="text-secondary"> // [0 12]</span> <br>
+          </div>
+          <p>На этом способы создания среза в Go не заканчиваются. Для гибкого способа создания пустых срезов в Go
+            существует встроенная функция make следующего вида:</p>
+          <div class="alert alert-dark" role="alert">
+            <code>make</code>([]T, length, capacity)
+          </div>
+          <div class="alert alert-dark" role="alert">
+            a := make([]int, 10, 10)<span class="text-secondary"> // [0 0 0 0 0 0 0 0 0 0]</span> <br>
+            fmt.Println(a)
+          </div>
+          <p>Функция append позволяет добавить в срез новый элемент, выглядит она следующим образом:</p>
+          <div class="alert alert-dark" role="alert">
+            a := []int{1, 2, 3} <br>
+            a = <code>append(a, 4, 5)</code> <br>
+            <br>
+            fmt.Println(a)<span class="text-secondary"> // [1 2 3 4 5]</span>
+          </div>
+          <p>Рассматривая эти темы помните о том, что срез по своей сути - указатель на массив, а это влияет на его
+            поведение при передаче в качестве аргумента в функцию:</p>
+          <pre class="alert alert-dark" role="alert"><code>func fnA(a [3]int) {
+	a[1] = 15
+}
+
+func fnB(a []int) {
+	a[1] = 15
+}
+
+func main() {
+	a := [3]int{1, 2, 3}
+	b := []int{1, 2, 3}
+
+	fnA(a)
+	fnB(b)
+
+	fmt.Println(a)<span class="text-secondary"> // [1 2 3] </span>
+	fmt.Println(b)<span class="text-secondary"> // [1 15 3] </span>
+}              
+            </pre></code>
+          <p>
+            В приведенном примере мы создали 2 функции: fnA и fnB. Первая получает в качестве аргумента массив из 3-х
+            элементов, вторая - срез. Обе функции изменяют второй элемент последовательности, но мы получаем совсем
+            разный результат, потому что fnB работала с указателем на массив и изменила непосредственно сам массив, fnA
+            же работала с копией массива, поэтому внутри функции был изменен элемент копии массива, а базовый массив
+            остался неизменен.
+          </p>
+          <p>
+            К элементам среза обращение происходит также, как и к элементам массива - по индексу и также мы можем
+            перебирать все элементы с помощью цикла for:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>var users []string = []string{"Tom", "Alice", "Kate"}
+ 
+<span class="text-danger">for _, value := range users</span>{
+    fmt.Println(value)
+}
+          </pre></code>
+
+
+          <h3 id="ОбластьВидимости">Область видимости</h3>
+          <p>
+            Объявляя переменную, мы связываем ее имя с отражающей ее сущностью (числом, строкой, структурой). Область
+            видимости является частью исходного кода, в которой использование объявленного имени ссылается на сущность
+            из этого объявления.
+          </p>
+          <p>
+            Имя, объявленное внутри синтаксического блока, невидимо вне блока, приведем пример:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>package main
+
+import "fmt"
+
+func scope() {
+	v := 1
+	fmt.Print(v)
+}
+
+func main() {
+  <span class="text-secondary"> /*
+     * Если мы не станем рассматривать в данном случае вопрос о времени жизни переменной,
+     * а сконцентрируемся только на области видимости, то можем констатировать, что из
+     * функции main мы не можем получить доступа к переменной v, объявленной в функции
+     * scope.
+     */</span>
+	scope()
+	fmt.Print(v) <span class="text-secondary"> // ошибка компиляции</span>
+}
+         
+            </pre></code>
+          <p>Цикл for создает два лексических блока: яв­ный блок для тела цикла и неявный блок, который дополнительно
+            охватывает пере­менные, объявленные в инициализации цикла.
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>package main
+import "fmt"
+
+<span class="text-danger">var x = 1 // x доступна в любом месте в этом пакете </span>
+
+func main() {
+  <span class="text-danger">var y = 2 // y доступна только внутри функции main</span>
+
+    if true {
+      <span class="text-danger">var z = 3 // z доступна только внутри этого блока if</span>
+        fmt.Println(x, y, z) // Выводит: 1 2 3
+        }
+
+    fmt.Println(x, y) // Выводит: 1 2
+    fmt.Println(z) // Ошибка: z не определена }
+                       
+          </pre></code>
+          <p>
+            Аналогично конструкции цикла for такие неявные области видимости создаются конструкциями if, switch и
+            select.
+          </p>
+
+
+          <h3 id="Пакеты">Пакеты</h3>
+          <p>
+            В Go нет стандартного ООП как в C++/Java/C# и других языках. Поэтому и классов здесь нет, но есть пакеты.
+            Большие программы принято разделять на пакеты, чтобы упростить её чтение.
+          </p>
+          <p>
+            Создадим в проекте два файла: один - main.go, другой - main2.go. Но оба файла лежат в одном пакете, потому
+            что мы прописали package main. Поэтому мы без импорта можем вызывать функции из другого файла.
+          </p>
+          <img src="images/paket.png" class="figure-img img-fluid rounded" alt="...">
+          <p>Для запуска программы выше необходимо указать <b>все файлы пакета main</b> через пробел:</p>
+          <div class="alert alert-dark" role="alert">
+            go run main.go main2.go
+          </div>
+
+
+          <h3 id="Указатели">Указатели</h3>
+          <p>
+            Указатель - значение, которое указывает на адрес другой переменной. Рассмотрим это на примере:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>func main() {
+        a := 200
+        b := &a
+        *b++
+        fmt.Println(a)
+}
+          </pre></code>
+          <p>
+            В этом примере мы инициализируем переменную а и ссылающуюся на неё переменную b, мы не знаем, где она лежит,
+            однако компилятор об этом позаботится. Оператор & (взятие адреса) говорит о том, что в переменную b
+            записывается не значение переменной a, а её адрес в памяти. Переменная b здесь является указателем.
+          </p>
+          <p>Иначе можно записать так</p>
+          <div class="alert alert-dark" role="alert">
+            a := 200 <br>
+            var b *int = &a
+          </div>
+          <p>
+            <i><b>*int</b> - значит переменная указывает на другую переменную типа <b>int</b></i>
+          </p>
+          <p>Если вы всё ещё неуверенно себя чувствуете себя с указателями в Go, запомните два простых правила:</p>
+          <ul>
+            <li><span class="text-secondary">"Амперсанд" &</span> звучит похоже на "Адрес" (ну, и то слово и другое на
+              "А" начинается, по крайней мере)))),
+              поэтому &x читается как "адрес переменной X"</li>
+            <li><span class="text-secondary">звёздочка *</span> ни на что не похоже на звучит, но может использоваться в
+              двух случаях — перед типом (var x
+              *MyType — означает "тип указателя на MyType") и перед переменной (*x = y — означает "значение по адресу")
+            </li>
+          </ul>
+          <p>
+            <a href="https://habr.com/ru/articles/339192/">Зачем в Go амперсанд и звёздочка (& и *)?</a>
+          </p>
+
+
+          <h3 id="Структуры">Структуры</h3>
+          <p>Структура — это тип, содержащий именованные поля. Например, мы можем представить круг таким образом:</p>
+          <pre class="alert alert-dark" role="alert"><code>type Circle struct {
+    x float64
+    y float64
+    r float64
+}
+            </pre></code>
+          <p>
+            <i>Структуры и их методы пишутся выше <b>main</b>, главное вызвать все это в main</i>
+          </p>
+          <p>Мы можем создать экземпляр нового типа Circle несколькими способами:</p>
+          <div class="alert alert-dark" role="alert">
+            var c Circle <br>
+            <span class="text-secondary">// или </span> <br>
+            c := Circle{} <br>
+            c := new(Circle)<span class="text-secondary"> // Это выделит память для всех полей, присвоит каждому из них
+              нулевое значение и вернет указатель (*Circle) </span> <br>
+            <br>
+            c := Circle{x: 0, y: 0, r: 5} <span class="text-secondary">// с присвоением значений</span> <br>
+            c := Circle{0, 0, 5}
+          </div>
+          <p>Получить доступ к полям можно с помощью оператора <span class="text-secondary">. (точка)</span></p>
+          <p><i>Очень важно помнить о том, что аргументы в Go всегда копируются. Если мы попытаемся изменить любое поле
+              в
+              функции , оригинальная переменная не изменится. Поэтому используйте указатели </i>
+          </p>
+
+          <h4 id="Методы">Методы</h4>
+          <p>Несмотря на то, что программа стала лучше, мы все еще можем значительно её улучшить, используя метод —
+            функцию особого типа:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>func (c *Circle) area() float64 {
+    return math.Pi * c.r * c.r
+}
+           </pre></code>
+          <p>
+            Между ключевым словом func и именем функции мы добавили «получателя». Получатель похож на параметр — у него
+            есть имя и тип, но объявление функции таким способом позволяет нам вызывать функцию с помощью оператора .:
+          </p>
+          <div class="alert alert-dark" role="alert">
+            fmt.Println(c.area())
+          </div>
+          <p>Нам не нужно использовать оператор & (Go автоматически предоставляет доступ к указателю на Circle для этого
+            метода), и поскольку эта функция может быть использована только для Circle мы можем назвать её просто area.
+          </p>
+
+
+          <h3>Строки, руны</h3>
+          <h4>String</h4>
+          <p>Строка представляет собой неизменяемую последовательность байтов. Из этого следует ряд выводов:</p>
+          <ul>
+            <li>к строке применимы операции, применимые к массивам и срезам;</li>
+            <li>чтобы изменить строку, необходимо создать новую строку;</li>
+            <li>мы можем итерироваться по строке как и по всякой последовательности, но итерируясь по строке, мы будем
+              итерироваться по байтам, составляющим строку, а не по символам;</li>
+            <li>мы можем определить в строке подстроку.</li>
+          </ul>
+
+          <h4 id="SliceRun">Срезы рун ([]rune)</h4>
+          <p>Когда мы говорили о типах string и []byte, то выяснили, что 1 символ может занимать более одного байта.
+            Слегка упрощая мы можем сказать, что тип []rune - это последовательность на самом деле кодов символов,
+            причем 1 символ состоит из 1 кода (тип rune соответствует типу int32).
+          </p>
+          <p>
+            Методы работы с типом []rune показаны в следующем примере (обратите внимание на тип используемых в примере
+            кавычек, это не те же самые кавычки, что мы используем при работе со строками):
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>func ExampleRune() {
+	rs := []rune("Это срез рун")
+
+	<span class="text-secondary">// Итерируясь мы будем заменять символ 'р' на '*'</span>
+	for i := range rs {
+		if rs[i] == 'р' {
+			rs[i] = '*'
+		}
+	}
+	fmt.Printf("Измененнный срез в виде строки: %s\n", string(rs))
+
+	<span class="text-secondary">// Output:</span>
+	<span class="text-secondary">// Измененнный срез в виде строки: Это с*ез *ун</span>
+}
+          </pre></code>
+          <div class="alert alert-dark" role="alert">
+            удобно <code>rs := []rune(someString)</code>, потом работаешь со строкой как надобно, и обратно
+            переводишь<code> string(rs)</code>
+          </div>
+          <p>Строка в Go это срез байтов, поэтому мы можем конвертировать байты в строку и наоборот, тоже самое работает
+            и со срезами типа rune.
+          </p>
+
+
+          <h3>Обработка ошибок</h3>
+          <p>Самая простая обработка - это проверка ошибки на пустоту. Многие методы и функции в GO при вызове
+            возвращают не только нужный результат, но и ошибку. К примеру: у нас есть функция которая делит число на
+            другое число и ввод переменной.
+          </p>
+          <p>
+            Однако, надо учесть, что пользователь может быть невнимательным и подать на вход все, кроме int, что может
+            сломать нашу программу. Предотвратим это, используя специальную конструкцию:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>package main
+
+import "fmt"
+
+func divide(a int, b int) int {
+	return a / b
+}
+
+func main() {
+	var input int
+	_, <span class="text-danger">err</span> := fmt.Scan(&input) <span class="text-secondary">// функция Scan возвращает два параметра, но нам сейчас важно проверить только ошибку</span>
+  <span class="text-secondary">// fmt.Scan, как и fmt.Print возвращают 2 значения: количество прочитанных / записанных байт и статус ошибки.</span>
+	if err != nil {
+		fmt.Println("Проверьте типы входных параметров")
+	} else {
+		fmt.Println(divide(input, 5))<span class="text-secondary"> //Выведем результат, если ошибок нет </span>
+	}
+} 
+          </pre></code>
+          <p>Теперь если наш пользователь введет переменную типа не int то он увидит нашу дружелюбную просьбу:</p>
+          <div class="alert alert-dark" role="alert">
+            строка <br>
+            Проверьте типы входных параметров
+          </div>
+          <p><i>nil - это пустота (null в других языках)</i></p>
+          <h4>Оператор panic</h4>
+          <p>Оператор panic позволяет сгенерировать ошибку и выйти из программы:</p>
+          <pre class="alert alert-dark" role="alert"><code>package main
+import "fmt"
+ 
+func main() {
+    fmt.Println(divide(15, 5))
+    fmt.Println(divide(4, 0))
+    fmt.Println("Program has been finished")
+}
+func divide(x, y float64) float64{
+    if y == 0{ 
+      <span class="text-danger">panic("division by zero!")</span>
+    }
+    return x / y
+}
+          </pre></code>
+          <p>В функции main в вызове fmt.Println(divide(4, 0)) будет выполняться оператор panic, поскольку второй
+            параметр функции divide равен 0. И в этом случае все последующие операции, которые идут после этого вызова,
+            например, в данном случае это вызов fmt.Println("Program has been finished"), не будут выполняться. В этом
+            случае мы получим следующий консольный вывод:
+          </p>
+          <div class="alert alert-dark" role="alert">
+            3 <br>
+            <br>
+            panic: division by zero!
+          </div>
+
+
+          <h3 id="map">Отображения, по другому - map, карта</h3>
+          <p>Все ключи в данном отображении имеют один и тот же тип, как и все значения имеют один и тот же тип, но тип
+            ключей не обязан совпадать с типом значений. Тип ключа К должен быть сравниваемым с помощью оператора ==,
+            чтобы отображение могло проверить, равен ли данный ключ одному из имеющихся в нем.
+          </p>
+          <pre class="alert alert-dark" role="alert"><code> <span class="text-secondary">// с помощью встроенной функции make:</span>
+m1 := make(map[int]int)
+
+<span class="text-secondary">// с помощью использования литерала отображения:</span>
+m2 := map[int]int{
+    // Пары ключ:значение указываются при необходимости
+    12: 2,
+    1:  5,
+}
+
+fmt.Println(m1) <span class="text-secondary"> // map[]</span>
+fmt.Println(m2)  <span class="text-secondary">// map[1:5 12:2]</span>
+          </pre></code>
+          <p>
+            Обратиться к элементам отображения можно с помощью обычной индексац
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>m := map[int]int{
+	12: 2,
+	1:  5,
+}
+
+fmt.Println(m[12]) <span class="text-secondary">// 2</span>
+          </pre></code>
+          <p>
+            Удаление осуществляется с помощью встроенной функции delete:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>m := map[int]int{
+	12: 2,
+	1:  5,
+}
+
+<span class="text-danger">delete</span>(m, 12)<span class="text-secondary"> // Удаление элемента по ключу 12</span>
+fmt.Println(m)<span class="text-secondary"> // map[1:5]</span>
+          </pre></code>
+          <p>Для перечисления всех пар "ключ-значение" в отображении мы используем циклы по диапазону, аналогичные тем,
+            которые мы использовали для массивов и срезов. Последовательные итерации приведенного ниже цикла присваивают
+            переменным key и value значения из очередной пары "ключ-значение" :
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>for key, value := range mapName {
+    fmt.Println(key, value)
+}
+          </pre></code>
+          <p>Кроме того, Go позволяет применить к отображению функцию len, которая вернет количество пар
+            "ключ-значение", хранящееся в отображении:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>m := map[int]int{
+	1: 10,
+	2: 20,
+	3: 30,
+}
+fmt.Println(len(m))<span class="text-secondary"> // 3</span>
+          </pre></code>
+          <p>Как же понять, что ключ в отображении присутствует? Мы можем воспользоваться тестом из следующего примера:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>m := map[int]int{
+	1: 10,
+}
+
+if value, ok := m[1];<span class="text-danger"> ok </span>{ <span class="text-secondary">// значение ok - булевое значение, показывающее, есть ли значение по такому ключу (т.е. ok == True)</span>
+	fmt.Println(value)<span class="text-secondary">  // 10 </span>
+}
+
+if value, ok := m[2];<span class="text-danger"> ok</span> {
+	fmt.Println(value)<span class="text-secondary">  // Условие не выполняется </span>
+}
+          </pre></code>
+
+
+          <h3 id="PreobTD">Преобразование типов данных</h3>
+          <p>При конвертации чисел в строки очень удобно использовать пакет strconv, он обладает методом Itoa,
+            превращающим числовое значение (int) переменной в строковое (string).
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	a := strconv.Itoa(2020)<span class="text-secondary"> // int -> string </span>
+	fmt.Printf("%T \n", a)<span class="text-secondary"> // тип - string </span>
+	fmt.Println(a)<span class="text-secondary"> // 2020 </span>
+} 
+          </pre></code>
+          <p>
+            Конвертация целых беззнаковых чисел в строку
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>var a uint64 = 10101
+res := strconv.FormatUint(a, 10)
+fmt.Println(res)<span class="text-secondary"> // 10101</span>
+          </pre></code>
+          <p>Конвертация bool в string</p>
+          <pre class="alert alert-dark" role="alert"><code>var a = true
+res := strconv.FormatBool(a)
+fmt.Println(res)<span class="text-secondary">     	// true </span>
+fmt.Printf("%T", res)<span class="text-secondary">   // string </span>
+          </pre></code>
+          <p>Строка в Go это срез байтов, поэтому мы можем конвертировать байты в строку и наоборот:</p>
+          <pre class="alert alert-dark" role="alert"><code>package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    a := "str"
+
+    b := []byte(a)
+
+    c := string(b)
+
+    fmt.Println(a)<span class="text-secondary">  // str</span>
+
+    fmt.Println(b)<span class="text-secondary">  // [115 116 114] - побайтовый срез</span>
+
+    fmt.Println(c)<span class="text-secondary">  // str</span>
+}
+          </pre></code>
+          <p>
+            Первая строка вывода - значение переменной "a", вторая - ее побайтовый срез, третья - значение переменной
+            "c", являющейся результатом конвертации байтов в строку.
+          </p>
+          <p>
+            Тоже самое работает и со срезами типа rune:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    a := "строка"
+
+    b := []rune(a)<span class="text-secondary">// срез рун </span>
+
+    c := string(b)
+
+    fmt.Println(a)<span class="text-secondary"> // строка </span>
+
+    fmt.Println(b)<span class="text-secondary"> // [1089 1090 1088 1086 1082 1072] - срез рун </span>
+
+    fmt.Println(c)<span class="text-secondary"> // строка </span>
+}
+          </pre></code>
+
+
+          <h3 id="AnonF">Анонимные функции</h3>
+          <p>
+            Анонимные функции позволяют нам определить некоторое действие непосредственно там, где оно применяется.
+            Например, нам надо выполнить сложение двух чисел, но больше нигде это действие в программе не нужно:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>package main
+ 
+import "fmt"
+ 
+func main() {
+     
+  <span class="text-danger">f := func(x, y int) int{ return x + y}</span>
+    fmt.Println(f(3, 4))<span class="text-secondary">        // 7</span>
+    fmt.Println(f(6, 7))<span class="text-secondary">        // 13</span>
+}
+          </pre></code>
+          <p>
+            Фактически переменная f определена как:
+          </p>
+          <div class="alert alert-dark" role="alert">
+            var f func(int, int) int = func(x, y int) int{ return x + y}
+          </div>
+          <p>
+            То есть переменной f можно присвоить любую функцию, которая соответствует типу func(int, int) int.
+          </p>
+          <h4>Анонимная функция как аргумент функции</h4>
+          <p>
+            Очень удобно использовать анонимные функции в качестве аргументов других функций:
+          </p>
+          <pre class="alert alert-dark" role="alert"><code>package main
+ 
+import "fmt"
+ 
+func action(n1 int, n2 int, operation func(int, int) int){
+ 
+    result := operation(n1, n2)
+    fmt.Println(result)
+}
+func main() {
+     
+    action(10, 25, func (x int, y int) int { return x + y })<span class="text-secondary">     // 35</span>
+    action(5, 6, func (x int, y int) int { return x * y })<span class="text-secondary">       // 30</span>
+}
+          </pre></code>
+
+          <h4>Анонимная функция как результат функции</h4>
+          <pre class="alert alert-dark" role="alert"><code>package main
+ 
+import "fmt"
+ 
+func selectFn(n int) (func(int, int) int){
+    if n==1 {
+        return func(x int, y int) int{ return x + y}
+    }else if n==2{
+        return func(x int, y int) int{ return x - y}
+    }else{
+        return func(x int, y int) int{ return x * y}
+    }
+}
+ 
+func main() {
+     
+    f := selectFn(1)
+    fmt.Println(f(2, 3))<span class="text-secondary">        // 5</span>
+    fmt.Println(f(4, 5))<span class="text-secondary">        // 9</span>
+    fmt.Println(f(7, 6))<span class="text-secondary">        // 13</span>
+}
+          </pre></code>
+          <p><b>Доступ к окружению</b>.<br> Преимуществом анонимных функций является то, что они имеют доступ к окружению, в
+            котором они определяются.
+          </p>
+
+
+
+
+
+          <h2>Ссылки на Курсы</h2>
+          <p>#.</p>
+          <ul>
+            <li><a href="https://habr.com/ru/articles/501442/#mkdir">Основные linux-команды для новичка / Хабр</a>
+            </li>
+            <li><a href="https://github.com/0nn0/terminal-mac-cheatsheet.git">Terminal / GitHub</a>
+            </li>
+          </ul>
+
+          <!-- <h2>Книги</h2>
+          <p>Можно сказать, что они наши первые учителя, но я бы сказал, что это большие библиотеки данных (конспекты)
+          </p>
+          <ul>
+            <li><b>A Byte of Python (Swaroop C H) </b> - в простонародии, укус Питона. Фундаментальная вещь,
+              обязательная к чтению</li>
+            <li><b>Изучаем Python (Эрик Мэтиз)</b> - очень рекомендую после укуса Python</li>
+          </ul>
+          <h3>Sub-heading</h3>
+          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and
+            show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
+            demonstration flowing, so be on the lookout for this exact same string of text.</p>
+          <pre><code>Example code block</code></pre>
+          <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
+            repetitive body text used throughout.</p> -->
+        </article>
+
+        <!-- git -->
+        <article class="blog-post">
+          <h2 class="display-5 link-body-emphasis mb-1" id="Git">#</h2>
+          <figure class="figure">
+            <img src="images/git.webp " class="figure-img img-fluid rounded" alt="..." style="width: 400px;">
+            <figcaption class="figure-caption">#</figcaption>
+          </figure>
+
+          <h3>Общее</h3>
+
+        </article>
+
+        <!-- <article class="blog-post">
+          <h2 class="display-5 link-body-emphasis mb-1">New feature</h2>
+          <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
+
+          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and
+            show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
+            demonstration flowing, so be on the lookout for this exact same string of text.</p>
+          <ul>
+            <li>First list item</li>
+            <li>Second list item with a longer description</li>
+            <li>Third list item to close it out</li>
+          </ul>
+          <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
+            repetitive body text used throughout.</p>
+        </article> -->
+
+        <nav class="blog-pagination" aria-label="Pagination">
+          <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+          <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
+        </nav>
+
+      </div>
+
+      <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <div class="p-4 mb-3 bg-body-tertiary rounded">
+            <h4 class="fst-italic">Быстрые ссылик</h4>
+            <p class="mb-0">
+            <ul>
+              <li><a href="#Def">Функции</a></li>
+              <li><a href="#Mas">Массив</a></li>
+              <li><a href="#Slice">Срезы</a></li>
+              <li><a href="#ОбластьВидимости">Области Видимости</a></li>
+              <li><a href="#Пакеты">Пакеты</a></li>
+              <li><a href="#Указатели">Указатели</a></li>
+              <li><a href="#Структуры">Структуры</a></li>
+              <li><a href="#Методы">Методы</a></li>
+              <li><a href="#SliceRun">Срезы Рун</a></li>
+              <li><a href="#map">Карта (словарь)</a></li>
+              <li><a href="#PreobTD">Преобразование типов данных</a></li>
+              <li><a href="#AnonF">Анонимные функции</a></li>
+            </ul>
+            </p>
+          </div>
+
+          <div>
+            <h4 class="fst-italic">Дополнительные ресурсы</h4>
+            <ul class="list-unstyled">
+              <li><a href="https://habr.com/ru/articles/501442/#mkdir">Основные linux-команды для новичка / Хабр</a>
+              </li>
+              <li><a href="https://github.com/0nn0/terminal-mac-cheatsheet.git">Terminal / GitHub</a>
+              </li>
+              <li><a href="https://github.com/cyberspacedk/Git-commands.git">Шпаргалка по консольным командам Git</a>
+                <br>
+              </li>
+              <li><a
+                  href="https://skillbox.ru/media/code/chto-takoe-github-i-kak-im-polzovatsya/?ysclid=luts777yu4514204748#stk-4">Что
+                  такое GitHub и как им пользоваться
+                </a> <br></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
+        href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p class="mb-0">
+      <a href="#">Back to top</a>
+    </p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

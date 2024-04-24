@@ -359,11 +359,66 @@
             <dd><a href="https://practicum.yandex.ru/git-basics/">Работа с GitHub, Git, Terminal</a>. Яндекс Практикум
             </dd>
             <dt>Виртуальное окружение</dt>
-            <dd><a href="https://youtu.be/rsG1Y5k-9jo?si=oVHtn2uR7sttLecN">Виртуальное окружение</a>. Очень круто и кратко !</dd>
-            <dt>Cascading Style Sheets (CSS)</dt>
-            <dd>Used to describe the appearance of Web content</dd>
-            <dt>JavaScript (JS)</dt>
-            <dd>The programming language used to build advanced Web sites and applications</dd>
+            <dd><a href="https://youtu.be/rsG1Y5k-9jo?si=oVHtn2uR7sttLecN">Виртуальное окружение</a>. Очень круто и
+              кратко !</dd>
+            <dd><a href="https://stepik.org/lesson/681494/step/2?unit=680273">Виртуальное окружение</a>. Интерпритатор,
+              Вирт. окр. Настройка !</dd>
+            <dd>У нас есть Terminal для работы с системой. Интерпретатор — это штука, которая переводит байткод в нули и
+              единицы, понятные центральному процессору компьютера. (т.е это Python).
+              Сама система имеет окружение, где может быть много версий Интерпретаторов. У них же есть свои бибилотеки,
+              фреймворки. Что бы разные программа, которые работают на разных версиях
+              библиотек не путались, были придуманы виртуальные окружения. Их нужно создавать, активировать, а после
+              удалять. Их можно передавать при помощи файла, со списком библиотек, которые нужно установаить,
+              что бы программа заработала, как мы того ожидаем.
+            </dd>
+            <dd>
+              В IDE пишется название окружения - <i>(base) MacBook-Air-ila:blog (test) ila$ (base - вирутальное
+                окружение
+                системы). </i><br>
+              <i>(venv) (base) ila@MacBook-Air-ila pythonProject % - вирутальное окр. "venv" (которе я создал для этого
+                проекта)</i> <br>
+              <i>(my_page(django)) (base) ila@MacBook-Air-ila my_page - используется вирт. окруж. вместе с фреймворком
+                django</i>
+            </dd>
+            <dt>Активации, деактивации <b>виртуального окружения</b></dt>
+            <dd></dd>
+            <dd><a
+                href="https://pythonchik.ru/okruzhenie-i-pakety/virtualnoe-okruzhenie-python-venv?ysclid=lvdmcp5622708703198">Кратко</a>
+            </dd>
+            <dd><a
+              href="https://translated.turbopages.org/proxy_u/en-ru.ru.ebd8f124-6628d7ee-443b98fe-74722d776562/https/stackoverflow.com/questions/71521833/pycharm-showing-venv-and-base-in-the-terminal?__ya_mt_enable_static_translations=1">Почему видно (venv)(base)</a>
+          </dd>
+            <dd>Основная цель виртуального окружения Python — создание изолированной среды для python-проектов</dd>
+            <dd>Это означает, что каждый проект может иметь свои собственные зависимости, независимо от других проектов.
+            </dd>
+            <dd>Для создания виртуального окружения, перейдите в директорию своего проекта и выполните:</dd>
+            <dd>
+              <div class="alert alert-dark" role="alert">
+                python -m venv venv<span class="text-secondary"> -m — флаг для запуска venv как исполняемого модуля.
+                  <br>
+                  venv — название виртуального окружения (где будут храниться ваши библиотеки).</span>
+              </div>
+            </dd>
+            <dd>Чтобы начать пользоваться виртуальным окружением, необходимо его активировать:</dd>
+            <div class="alert alert-dark" role="alert">
+              venv\Scripts\activate.bat
+              <span class="text-secondary">- для Windows; </span> <br>
+              source venv/bin/activate
+              <span class="text-secondary">- для Linux и MacOS. </span>
+            </div>
+            <dd>Проверить успешность активации можно по приглашению оболочки. Она будет выглядеть так:</dd>
+            <div class="alert alert-dark" role="alert">
+              (venv) root@purplegate:/var/test#
+            </div>
+            <dd>Закончив работу в виртуальной среде, вы можете отключить ее, выполнив консольную команду:</dd>
+            <div class="alert alert-dark" role="alert">
+              deactivate
+            </div>
+            <dd>Если нужно посмтореть библиотеки, установленные в Вирт. Окруж. :</dd>
+            <div class="alert alert-dark" role="alert">
+              pip freeze
+            </div>
+            <dd><i>Когда пишите путь, нажмите tab , он сам достроит слово. Стрелочки вверх и вниз, вызов ранее написанных команд.</i></dd>
           </dl>
           <h2>Ссылки на Курсы</h2>
           <p>Как не странно, самый часто распрастраненый вопрос, какие курсы я проходил, делюсь списком.</p>
@@ -377,12 +432,15 @@
             <li><a href="https://stepik.org/course/61247/syllabus">SQL с нуля до PRO</a></li>
             <li><a href="https://stepik.org/course/63054/syllabus">Интерактивный тренажер по SQL</a></li>
           </ul>
-          <p>Я не стал публиковать все курсы, которые я проходил, а лишь те, которые я могу с увереностью рекомендовать.</p>
+          <p>Я не стал публиковать все курсы, которые я проходил, а лишь те, которые я могу с увереностью рекомендовать.
+          </p>
 
           <h2>Книги</h2>
-          <p>Можно сказать, что они наши первые учителя, но я бы сказал, что это большие библиотеки данных (конспекты)</p>
+          <p>Можно сказать, что они наши первые учителя, но я бы сказал, что это большие библиотеки данных (конспекты)
+          </p>
           <ul>
-            <li><b>A Byte of Python (Swaroop C H) </b> - в простонародии, укус Питона. Фундаментальная вещь, обязательная к чтению</li>
+            <li><b>A Byte of Python (Swaroop C H) </b> - в простонародии, укус Питона. Фундаментальная вещь,
+              обязательная к чтению</li>
             <li><b>Изучаем Python (Эрик Мэтиз)</b> - очень рекомендую после укуса Python</li>
           </ul>
           <h3>Sub-heading</h3>
